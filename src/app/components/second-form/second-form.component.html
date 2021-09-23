@@ -1,0 +1,22 @@
+<h4 class="mb-4">Se insertan multiples usuarios de la siguiente forma:</h4>
+<form [formGroup]="secondForm" (ngSubmit)="send()">
+    <div class="row">
+        <div class="input-group">
+            <span class="input-group-text">Usuarios</span>
+            <textarea class="form-control" aria-label="With textarea" formControlName="users"></textarea>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col  d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-success btn-lg">Guardar</button>
+        </div>
+    </div>
+</form>
+<div class="row mt-3">
+    <div *ngIf="success" class="col">
+        <h3 class="textResponse">Usuarios guardados con éxito</h3>
+    </div>
+    <div *ngIf="error2" class="col">
+        <h3 class="textNoResponse">Error al enviar el formulario</h3>
+    </div>
+</div>

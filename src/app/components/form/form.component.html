@@ -1,0 +1,58 @@
+<h1 class="title">Formulario API con Elixir</h1>
+<hr>
+<h4 class="mb-4">Complete el siguiente formulario.</h4>
+<form [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+        <div class="input-group">
+            <span class="input-group-text">Complete:</span>
+            <input type="text" aria-label="First name" class="form-control" placeholder="Nombre(s)" formControlName="name">
+            <input type="text" aria-label="Last name" class="form-control" placeholder="Apellido paterno"  formControlName="first_last_name">
+            <input type="text" aria-label="Last name" class="form-control" placeholder="Apellido materno" formControlName="last_name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div *ngIf="invalidName" class="invalidText">*Nombre es necesario*</div>
+        </div>
+        <div class="col">
+            <div *ngIf="invalidFirstLastName" class="invalidText">*Apellido paterno es necesario*</div>
+        </div>
+        <div class="col">
+            <div *ngIf="invalidLastName" class="invalidText">*Apellido materno es necesario*</div>
+        </div>
+    </div>
+    <div class="input-group mt-3">
+        <span class="input-group-text">Edad:</span>
+        <input type="number" class="form-control" formControlName="age" >
+    </div>
+    <div *ngIf="invalidAge" class="invalidText">*Edad es necesario*</div>
+    <div class="input-group flex-nowrap mt-3">
+        <span class="input-group-text">Correo:</span>
+        <input type="text" class="form-control" placeholder="user@mail.com" aria-label="Username" formControlName="email" aria-describedby="addon-wrapping">
+    </div>
+    <div *ngIf="invalidEmail" class="invalidText">*Correo es necesario*</div>
+    <div class="input-group mt-3">
+        <label class="input-group-text" for="inputGroupSelect01" >Sexo</label>
+        <select class="form-select" id="inputGroupSelect01" formControlName="gender">
+            <option [selected]="true">Seleccione...</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+        </select>
+    </div>
+    <div *ngIf="invalidGender" class="invalidText">*Indique el sexo, es necesario*</div>
+    <div class="row mt-3">
+        <div class="col  d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-success btn-lg">Guardar</button>
+        </div>
+    </div>
+</form>
+<div class="row mt-3">
+    <div *ngIf="success" class="col">
+        <h3 class="textResponse">Usuario guardado con éxito</h3>
+    </div>
+    <div *ngIf="error" class="col">
+        <h3 class="textNoResponse">Error al enviar el formulario</h3>
+    </div>
+</div>
+<app-second-form></app-second-form>
+

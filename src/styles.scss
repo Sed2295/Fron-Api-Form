@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+.container-form {
+    margin-top: 1.5rem;
+}
+.title {
+    color: #6f42c1;
+}
+.invalidText {
+    color: red;
+}
+.textResponse {
+    color: green;
+    font-weight: bold;
+}
+.textNoResponse {
+    color: red;
+    font-weight: bold;
+}
+textarea {
+    height: 6rem;
+}
