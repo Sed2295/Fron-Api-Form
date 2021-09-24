@@ -15,7 +15,7 @@ export class SecondFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private _service:FormService) {
     this.secondForm = this.fb.group({
-      users: ['Daniel Ramon Lara,26,djbrush1122@gmail.com,1\nIsrael Reyes Lemus,25,israel@yahoo.com,1\nJorge Garcia Guerra,30,george@hotmail.com,1',
+      users: ['Daniel Ramon Lara,26,daniel_ramon@gmail.com,1\nIsrael Reyes Lemus,25,israel@yahoo.com,1\nJorge García Guerra,30,george@hotmail.com,1',
       [Validators.required]]
     })
   }
